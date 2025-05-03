@@ -1,3 +1,3 @@
 API_ID = 23855532
 API_HASH = "3cc6eac0a9fbfe0b2b1da77f043cc9c9"
-BOT_TOKEN = "7006974729:AAEnBbQpqALzRrFvmcgSCjw-yxoxhD0Yrh8"
+BOT_TOKEN = ""
