@@ -11,15 +11,15 @@ app = Client(
     bot_token=BOT_TOKEN
 )
 
-# /start handler
+
 @app.on_message(filters.command("start") & filters.private)
 async def start_handler(client: Client, message: Message):
     await message.reply(
-        "Hi, saya adalah bot untuk melihat profil Instagram yang dibuat oleh Razer.\n\n"
+        "Hi, saya adalah bot untuk melihat profil Instagram yang dibuat oleh rz.\n\n"
         "Ketik `/stalk username_ig` untuk mulai stalking."
     )
 
-# Fungsi untuk mengambil info IG dari picuki
+
 def get_ig_info(username: str):
     headers = {"User-Agent": "Mozilla/5.0"}
     url = f"https://www.picuki.com/profile/{username.strip('@')}"
@@ -47,7 +47,7 @@ def get_ig_info(username: str):
     except Exception:
         return None
 
-# /stalk handler
+
 @app.on_message(filters.command("stalk") & filters.private)
 async def stalk_handler(client: Client, message: Message):
     if len(message.command) < 2:
@@ -71,5 +71,5 @@ async def stalk_handler(client: Client, message: Message):
     await message.reply_photo(photo=result['pfp'], caption=caption)
     await wait_msg.delete()
 
-# Menjalankan bot
+
 app.run()
